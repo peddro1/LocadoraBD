@@ -11,6 +11,7 @@ section{
     padding: 15px;
     width: 240px;
     
+    
     box-shadow: 5px 5px 10px rgba(59, 41, 41, 0.295);
     margin: auto;
     
@@ -20,11 +21,4 @@ div{
     padding: 5px;
     
     text-align: center;
-}
-
-
-div#title{
-    
-    font: normal 20px Arial;
-    
 }

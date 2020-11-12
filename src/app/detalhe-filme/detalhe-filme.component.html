@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Especificação</title>
+</head>
+<body>
+
+    <div >
+        <input id="consulta" type="number" name="id" [(ngModel)] = "id">
+        <button (click) = "mostrarDetalhe()">Consultar</button>
+    </div>
+    <section>
+
+        <div>
+            <img id = 'backdrop' src="" alt="">
+        </div>
+         
+        <div>
+            <label>{{filme?.original_title}}</label>
+        </div>
+        <div>
+            <label id="genero"> {{filme?.genres[0]?.name}}</label>
+        </div>
+        <div>
+            <label>{{filme?.overview}}</label>
+        </div>
+    
+    </section>
+    
+</body>
+</html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultados da busca</title>
+</head>
+<body>
+    <div >
+        <input id="consulta" type="text" name="name" [(ngModel)] = "name">
+        <button (click) = "pesquisarFilme()">Consultar</button>
+    </div>
+    <section>
+
+        <div id="post">
+            <img   src=""  alt="" >
+             
+        </div>
+        <div >
+            <label >{{result?.total_results}} </label>
+            
+        </div>
+        <div id="total">
+            
+        </div>
+        
+    
+    </section>
+
+</body>
+</html>

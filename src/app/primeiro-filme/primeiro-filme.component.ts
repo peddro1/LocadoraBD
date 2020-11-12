@@ -1,8 +1,10 @@
 
+import { Route } from '@angular/compiler/src/core';
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 import { Filme } from '../filme.model';
-import { FilmeService } from './filme.service';
+import { FilmeService } from '../filme.service';
 
 @Component({
   selector: 'app-primeiro-filme',
@@ -10,27 +12,35 @@ import { FilmeService } from './filme.service';
   styleUrls: ['./primeiro-filme.component.css']
 })
 export class PrimeiroFilmeComponent implements OnInit {
+  
+  router: Router
   id: number
+
   filme: Filme
+  
+  img_base = 'https://image.tmdb.org/t/p/w200'
   
   constructor(private filmeService: FilmeService) {
       this.filmeService = filmeService;
    }
 
   ngOnInit(): void {
+    window.document.getElementById('poster').setAttribute('src', 'https://image.tmdb.org/t/p/w200/8h0CG12Oft1GqthLmsctg8iuQQj.jpg')
   }
 
   consultarFilme() {
-    this.filmeService.consultarFilme(this.id).subscribe(data=>{
+    this.filmeService.consultarFilmePorId(this.id).subscribe(data=>{
       this.filme = data;
-      var img = window.document.getElementById('poster').setAttribute('src','https://image.tmdb.org/t/p/w200' + this.filme.poster_path)
+      window.document.getElementById('poster').setAttribute('src', this.img_base + this.filme.poster_path)
+      //window.document.getElementById('backdrop').setAttribute('src', 'https://image.tmdb.org/t/p/w500' + this.filme.backdrop_path)   
+      //https://image.tmdb.org/t/p/w500/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg
 
     }
     
     )  
   }
-  setImagem(){
-    
-  }
+
+  
+  
 
 }
