@@ -15,8 +15,6 @@ export class PesquisaFilmeComponent implements OnInit {
 
   result: Resultado
 
-  
-
   constructor(private filmeService: FilmeService) { 
     this.filmeService = filmeService
   }
@@ -27,28 +25,44 @@ export class PesquisaFilmeComponent implements OnInit {
   pesquisarFilme(){
     this.filmeService.consultarFilmePorNome(this.name).subscribe(dado=>{
       this.result = dado
-
-      let imgStr = ''
+      
       /*
       if(this.result?.total_results > 5){
         this.result.total_results = 5
       }
       */
-      let post = document.getElementById('post')
+     
 
+      /*
       this.result.results.forEach(function(resultado){
-        let src = 'https://image.tmdb.org/t/p/w200' + resultado.poster_path
+        let scrBase = 'https://image.tmdb.org/t/p/w200'
+
+        let src = scrBase + resultado.poster_path
 
         imgStr +=
         `
-        <img src=${src}>
+          <img src=${src}>
+        <div>
+          <p id = 'title'>${resultado.original_title}</p>
+          <label><p>${resultado.release_date}</p></label>
+        </div>
+
         `
       })
 
-      post.innerHTML = imgStr
-    
+      //post.innerHTML = imgStr
+      */
+
+      
     })
 
+  }
+
+  retornaSrc(poster_path: string){
+    if(poster_path != null){
+      return 'https://image.tmdb.org/t/p/w200' + poster_path
+    }
+    
   }
 
 }

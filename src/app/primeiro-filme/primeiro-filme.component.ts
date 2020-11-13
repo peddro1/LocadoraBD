@@ -31,7 +31,7 @@ export class PrimeiroFilmeComponent implements OnInit {
   consultarFilme() {
     this.filmeService.consultarFilmePorId(this.id).subscribe(data=>{
       this.filme = data;
-      window.document.getElementById('poster').setAttribute('src', this.img_base + this.filme.poster_path)
+      //window.document.getElementById('poster').setAttribute('src', this.img_base + this.filme.poster_path)
       //window.document.getElementById('backdrop').setAttribute('src', 'https://image.tmdb.org/t/p/w500' + this.filme.backdrop_path)   
       //https://image.tmdb.org/t/p/w500/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg
 
@@ -39,8 +39,11 @@ export class PrimeiroFilmeComponent implements OnInit {
     
     )  
   }
-
   
-  
+  retornaSrc(poster_path: string){
+    if(poster_path != null){
+      return 'https://image.tmdb.org/t/p/w200' + poster_path
+    }
+  }
 
 }

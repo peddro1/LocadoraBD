@@ -9,13 +9,21 @@ import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { DetalheFilmeComponent } from './detalhe-filme/detalhe-filme.component';
 import { PesquisaFilmeComponent } from './pesquisa-filme/pesquisa-filme.component';
+import { MelhoresAvaliacoesComponent } from './melhores-avaliacoes/melhores-avaliacoes.component';
+import { MaisPopularesComponent } from './mais-populares/mais-populares.component';
+import { LancamentosComponent } from './lancamentos/lancamentos.component';
+import { ProximosLancamentosComponent } from './proximos-lancamentos/proximos-lancamentos.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PrimeiroFilmeComponent,
     DetalheFilmeComponent,
-    PesquisaFilmeComponent
+    PesquisaFilmeComponent,
+    MelhoresAvaliacoesComponent,
+    MaisPopularesComponent,
+    LancamentosComponent,
+    ProximosLancamentosComponent
   ],
   imports: [
     BrowserModule,
