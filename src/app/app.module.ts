@@ -13,6 +13,8 @@ import { MelhoresAvaliacoesComponent } from './melhores-avaliacoes/melhores-aval
 import { MaisPopularesComponent } from './mais-populares/mais-populares.component';
 import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { ProximosLancamentosComponent } from './proximos-lancamentos/proximos-lancamentos.component';
+import { Teste1Component } from './teste1/teste1.component';
+import { Teste2Component } from './teste2/teste2.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { ProximosLancamentosComponent } from './proximos-lancamentos/proximos-la
     MelhoresAvaliacoesComponent,
     MaisPopularesComponent,
     LancamentosComponent,
-    ProximosLancamentosComponent
+    ProximosLancamentosComponent,
+    Teste1Component,
+    Teste2Component
   ],
   imports: [
     BrowserModule,

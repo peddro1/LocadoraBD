@@ -26,6 +26,7 @@ export class MelhoresAvaliacoesComponent implements OnInit {
   retornaSrc(poster_path: string){
     if(poster_path != null){
       return 'https://image.tmdb.org/t/p/w200' + poster_path
+
     }
     
   }

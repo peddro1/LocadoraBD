@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { Filme } from '../filme.model';
 import { FilmeService } from '../filme.service';
 
@@ -8,32 +9,40 @@ import { FilmeService } from '../filme.service';
   styleUrls: ['./detalhe-filme.component.css']
 })
 export class DetalheFilmeComponent implements OnInit {
-  id: number
+  //id: Number
 
   filme: Filme
 
-  img_base = 'https://image.tmdb.org/t/p/w500'
 
-  constructor(private filmeService: FilmeService) {
+  constructor(private filmeService: FilmeService,
+    //private activatedRoute: ActivatedRoute
+    ) {
       this.filmeService = filmeService
+      //console.log(this.activatedRoute)
    }
 
   ngOnInit(): void {
-  }
-
-  mostrarDetalhe() {
-    this.filmeService.consultarFilmePorId(this.id).subscribe(data=>{
-     
-      this.filme = data
-      window.document.getElementById('backdrop').setAttribute('src',this.img_base + this.filme.backdrop_path)
-      //window.document.getElementById('genero').innerText = this.filme.genres[0].name
-      
-      
-      //this.filme.genres[0].name  -------------> retorna o nome do gênero
-
-    }
     
-    )  
+    /*
+    this.filmeService.consultarFilmePorId().subscribe(data=>{
+     this.filme = data
+      
+    })
+    */
+   
+   
+
+  }
+      
+    
+
+  retornaSrc(backdrop_path: string){
+    if(backdrop_path != null){
+      return 'https://image.tmdb.org/t/p/w500' + backdrop_path
+    }
+
+
+    
   }
 
 }
