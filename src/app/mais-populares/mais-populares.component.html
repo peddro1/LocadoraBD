@@ -9,11 +9,11 @@
     <h1>Filmes Populares</h1>
 
     <table id="orgPopular">
-        <section   id= 'populares' *ngFor = 'let resultados of filmesPopulares?.results' (click)="irParaDetalhe(resultados)">
+        <section   id= 'populares' *ngFor = 'let resultados of filmesPopulares?.results' (click)="irParaDetalhe(resultados?.id)">
 
             <div >
                 
-                <img [src]=retornaSrc(resultados.poster_path)  alt="">
+                <img [src]= retornaSrc(resultados.poster_path)  alt="">
             </div>
             <div id="title">
                 <label>{{resultados.original_title}}</label>

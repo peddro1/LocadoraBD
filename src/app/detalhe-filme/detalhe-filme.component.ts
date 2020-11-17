@@ -15,23 +15,21 @@ export class DetalheFilmeComponent implements OnInit {
 
 
   constructor(private filmeService: FilmeService,
-    //private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute
     ) {
       this.filmeService = filmeService
-      //console.log(this.activatedRoute)
+      
    }
 
   ngOnInit(): void {
     
-    /*
-    this.filmeService.consultarFilmePorId().subscribe(data=>{
+    
+    this.filmeService.consultarFilmePorId(Number(this.activatedRoute.snapshot.paramMap.get('id'))).subscribe(data=>{
      this.filme = data
       
     })
-    */
+    
    
-   
-
   }
       
     
@@ -40,8 +38,6 @@ export class DetalheFilmeComponent implements OnInit {
     if(backdrop_path != null){
       return 'https://image.tmdb.org/t/p/w500' + backdrop_path
     }
-
-
     
   }
 

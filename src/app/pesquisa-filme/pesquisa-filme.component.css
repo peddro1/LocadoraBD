@@ -1,4 +1,20 @@
+
+#logo{
+    
+    padding-top: 15px;
+    padding-left: 15px;
+    padding-bottom: 30px;
+}
+
+#pesq{
+    position: absolute;
+    top: 50px;
+    right: 50px;
+
+}
+
 body{
+    
     background: black;
     font: normal 15px Arial;
     color: white;

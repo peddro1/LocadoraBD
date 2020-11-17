@@ -13,8 +13,8 @@ import { MelhoresAvaliacoesComponent } from './melhores-avaliacoes/melhores-aval
 import { MaisPopularesComponent } from './mais-populares/mais-populares.component';
 import { LancamentosComponent } from './lancamentos/lancamentos.component';
 import { ProximosLancamentosComponent } from './proximos-lancamentos/proximos-lancamentos.component';
-import { Teste1Component } from './teste1/teste1.component';
-import { Teste2Component } from './teste2/teste2.component';
+import { HomeComponent } from './home/home.component';
+import { AcessibilidadeComponent } from './acessibilidade/acessibilidade.component';
 
 @NgModule({
   declarations: [
@@ -26,8 +26,9 @@ import { Teste2Component } from './teste2/teste2.component';
     MaisPopularesComponent,
     LancamentosComponent,
     ProximosLancamentosComponent,
-    Teste1Component,
-    Teste2Component
+    HomeComponent,
+    AcessibilidadeComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -38,8 +38,8 @@ export class MaisPopularesComponent implements OnInit {
     
   }
 
-  irParaDetalhe(resposta){
-    this.router.navigate(['/detalhe', resposta.id ])
+  irParaDetalhe(id: number){
+    this.router.navigate(['/detalhe/', id ])
   }
 
 

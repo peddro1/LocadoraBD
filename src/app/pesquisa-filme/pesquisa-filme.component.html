@@ -6,18 +6,25 @@
     <title>Resultados da busca</title>
 </head>
 <body>
-    <div >
-        <input id="consulta" type="text" name="name" [(ngModel)] = "name">
-        <button id="botao" (click) = "pesquisarFilme()">Consultar</button>
-    </div>
 
+    <table id="topo">
+        <div id="logo">
+            <img src="/assets/imagens/logoDesafio.png" alt="">
+        </div>
+        <div id="pesq">
+            <input id="consulta" type="text" name="name" [(ngModel)] = "name">
+            <button id="botao" (click) = "pesquisarFilme()">Pesquisar</button>
+        </div>
+
+    </table>
+   
     <h1 *ngIf = 'result != null'>
         Resultados da busca
     </h1>
     
     <table id='achados'  >
        
-        <section id = 'search' *ngFor = 'let resultados of result?.results' >
+        <section id = 'search' *ngFor = 'let resultados of result?.results' (click) = 'irParaDetalhe(resultados?.id)' >
 
             <div >
                 

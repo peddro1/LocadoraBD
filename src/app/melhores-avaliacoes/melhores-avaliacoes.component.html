@@ -9,7 +9,7 @@
     <h1>Melhores avaliações</h1>
 
     <section id="orgTops">
-        <section   id= 'tops' *ngFor = 'let resultados of melhoresFilmes?.results'>
+        <section   id= 'tops' *ngFor = 'let resultados of melhoresFilmes?.results' (click) = 'irParaDetalhe(resultados?.id)'>
 
             <div >
                 

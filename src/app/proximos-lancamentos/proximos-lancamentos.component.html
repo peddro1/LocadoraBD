@@ -9,7 +9,7 @@
     <h1>Próximos Lançamentos</h1>
 
     <table id="orgProxLancamentos">
-        <section   id= 'ProxLancamentos' *ngFor = 'let resultados of proxLancamentos?.results'>
+        <section   id= 'ProxLancamentos' *ngFor = 'let resultados of proxLancamentos?.results' (click) = 'irParaDetalhe(resultados?.id)'>
 
             <div >
                 

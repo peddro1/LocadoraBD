@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FilmeService } from '../filme.service';
 import { Resultado } from '../resultado.model';
 
@@ -11,7 +12,7 @@ export class ProximosLancamentosComponent implements OnInit {
 
   proxLancamentos: Resultado
 
-  constructor(private filmeService: FilmeService) { 
+  constructor(private filmeService: FilmeService, private router: Router) { 
     this.filmeService = filmeService
   }
 
@@ -27,5 +28,10 @@ export class ProximosLancamentosComponent implements OnInit {
     }
     
   }
+
+  irParaDetalhe(id: number){
+    this.router.navigate(['/detalhe/', id ])
+  }
+
 
 }

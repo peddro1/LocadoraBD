@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { By } from '@angular/platform-browser';
+import { Router } from '@angular/router';
 import { Filme } from '../filme.model';
 import { FilmeService } from '../filme.service';
 import { Resultado } from '../resultado.model';
@@ -15,7 +16,7 @@ export class PesquisaFilmeComponent implements OnInit {
 
   result: Resultado
 
-  constructor(private filmeService: FilmeService) { 
+  constructor(private filmeService: FilmeService, private router: Router) { 
     this.filmeService = filmeService
   }
 
@@ -25,37 +26,8 @@ export class PesquisaFilmeComponent implements OnInit {
   pesquisarFilme(){
     this.filmeService.consultarFilmePorNome(this.name).subscribe(dado=>{
       this.result = dado
-      
-      /*
-      if(this.result?.total_results > 5){
-        this.result.total_results = 5
-      }
-      */
-     
-
-      /*
-      this.result.results.forEach(function(resultado){
-        let scrBase = 'https://image.tmdb.org/t/p/w200'
-
-        let src = scrBase + resultado.poster_path
-
-        imgStr +=
-        `
-          <img src=${src}>
-        <div>
-          <p id = 'title'>${resultado.original_title}</p>
-          <label><p>${resultado.release_date}</p></label>
-        </div>
-
-        `
-      })
-
-      //post.innerHTML = imgStr
-      */
-
-      
-    })
-
+    }
+    )    
   }
 
   retornaSrc(poster_path: string){
@@ -63,6 +35,10 @@ export class PesquisaFilmeComponent implements OnInit {
       return 'https://image.tmdb.org/t/p/w200' + poster_path
     }
     
+  }
+
+  irParaDetalhe(id: number){
+    this.router.navigate(['/detalhe/', id ])
   }
 
 }

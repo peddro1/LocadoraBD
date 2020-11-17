@@ -9,7 +9,7 @@
     <h1>Lançamentos</h1>
 
     <table id="orgLancamentos">
-        <section   id= 'lancamentos' *ngFor = 'let resultados of lancamentos?.results'>
+        <section   id= 'lancamentos' *ngFor = 'let resultados of lancamentos?.results' (click) = "irParaDetalhe(resultados?.id)">
 
             <div >
                 
