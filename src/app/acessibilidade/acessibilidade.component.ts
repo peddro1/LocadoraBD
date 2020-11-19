@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { FilmeService } from '../filme.service';
 
 @Component({
   selector: 'app-acessibilidade',
@@ -7,9 +9,29 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AcessibilidadeComponent implements OnInit {
 
-  constructor() { }
+  fonte = 0
+
+  cont = 1
+  constructor(private filmeService: FilmeService) { }
 
   ngOnInit(): void {
+    
+  }
+
+  autoContraste(){
+    this.filmeService.setContraste(this.cont++)
+  }
+
+  aumentoDeFonte(){
+    this.filmeService.setFonteMaior(this.fonte += 3)
+  }
+
+  restaurarFonte(){
+    this.filmeService.setFonteNormal(this.fonte = 0)
+  }
+
+  diminuicaoDeFonte(){
+    this.filmeService.setFonteMenor(this.fonte -= 3)
   }
 
 }

@@ -1,11 +1,13 @@
 
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Observable } from 'rxjs';
+import {AcessibilidadeComponent} from "../acessibilidade/acessibilidade.component"
 import { __param } from 'tslib';
 
 import { FilmeService } from '../filme.service';
 import { Resultado } from '../resultado.model';
+import { from } from 'rxjs';
+import { htmlAstToRender3Ast } from '@angular/compiler/src/render3/r3_template_transform';
 
 @Component({
   selector: 'app-mais-populares',
@@ -16,8 +18,8 @@ export class MaisPopularesComponent implements OnInit {
 
   filmesPopulares: Resultado
   
-  hero: Observable<any>
  
+  
   constructor(private filmeService: FilmeService, private router: Router) { 
 
     this.filmeService = filmeService
@@ -28,6 +30,8 @@ export class MaisPopularesComponent implements OnInit {
     this.filmeService.retornarFilmesPopulares().subscribe(dado=>{
       this.filmesPopulares = dado
     })
+
+    
 
   }
 
@@ -40,6 +44,15 @@ export class MaisPopularesComponent implements OnInit {
 
   irParaDetalhe(id: number){
     this.router.navigate(['/detalhe/', id ])
+    
+  }
+
+  contras(){
+    
+    //window.document.getElementById('orgPopular').style.border = '3px solid yellow'
+    
+
+
   }
 
 

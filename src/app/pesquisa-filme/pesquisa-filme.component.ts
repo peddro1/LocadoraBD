@@ -21,13 +21,15 @@ export class PesquisaFilmeComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
   }
 
   pesquisarFilme(){
     this.filmeService.consultarFilmePorNome(this.name).subscribe(dado=>{
       this.result = dado
     }
-    )    
+    )
+   
   }
 
   retornaSrc(poster_path: string){

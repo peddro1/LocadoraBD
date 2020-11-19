@@ -16,6 +16,7 @@ import { ProximosLancamentosComponent } from './proximos-lancamentos/proximos-la
 import { HomeComponent } from './home/home.component';
 import { AcessibilidadeComponent } from './acessibilidade/acessibilidade.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,6 +29,7 @@ import { AcessibilidadeComponent } from './acessibilidade/acessibilidade.compone
     ProximosLancamentosComponent,
     HomeComponent,
     AcessibilidadeComponent,
+    
     
   ],
   imports: [

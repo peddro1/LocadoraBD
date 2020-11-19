@@ -1,12 +1,18 @@
 import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Filme } from './filme.model';
 import { Resultado } from './resultado.model';
 
 @Injectable()
 export class FilmeService{
 
-    
+    fonteNormal = new EventEmitter
+
+    fonteMenor = new EventEmitter
+
+    fonteMaior = new EventEmitter
+
+    constraste = new EventEmitter
 
     constructor(private httpClient: HttpClient){
         this.httpClient = httpClient
@@ -38,4 +44,19 @@ export class FilmeService{
         return this.httpClient.get<Resultado>('https://api.themoviedb.org/3/movie/upcoming?api_key=371ce6e369192bb9b814d0cb4741a793&region=US')
     }
 
+    setContraste(valor){
+        this.constraste.emit(valor%2==1?1:0)
+    }
+
+    setFonteMaior(valor){
+        this.fonteMaior.emit(valor)
+    }
+
+    setFonteNormal(valor){
+        this.fonteNormal.emit(valor)
+    }
+
+    setFonteMenor(valor){
+        this.fonteMenor.emit(valor)
+    }
 }
