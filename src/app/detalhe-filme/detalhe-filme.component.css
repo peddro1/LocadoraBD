@@ -5,6 +5,13 @@ body{
     
 }
 
+#voltar{
+    cursor: pointer;
+    position: absolute;
+    right: 380px;
+    top: 120px;
+}
+
 section{
     
     background-color: rgb(4, 107, 110);

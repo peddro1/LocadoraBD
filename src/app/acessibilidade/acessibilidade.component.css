@@ -4,7 +4,8 @@
 
 #icon{
     position: absolute;
-    right: 500px;
+    right: 50%;
+    transform: translateX(50%);
     
     top: 15px;
     display: grid;

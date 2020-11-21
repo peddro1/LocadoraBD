@@ -10,14 +10,18 @@
 <body>
 
     
-    <section *ngIf = 'filme != null'>
+    <section id="detalhe" *ngIf = 'filme != null'>
+
+        <div >
+            <button id='voltar' (click) = "voltarHome()"><strong> X </strong></button>
+        </div>
 
         <div>
             <img id = 'backdrop' [src]="retornaSrc(filme?.backdrop_path)" alt="">
         </div>
          
         <div>
-            <label>{{filme?.original_title}}</label>
+            <label><strong>{{filme?.original_title}}</strong></label>
         </div>
         <div>
             <label id="genero"> {{filme?.genres[0]?.name}}</label>

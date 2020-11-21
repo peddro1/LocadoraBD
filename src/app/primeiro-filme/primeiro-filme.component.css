@@ -1,30 +1,63 @@
 body{
+    padding: 20px;
+
     background: black;
     font: normal 15px Arial;
     color: white;
 
 }
 
-section{
-    background-color:rgb(4, 107, 110);
-    border-radius: 10px;
-    padding: 15px;
-    width: 240px;
+table{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+
+#matrixp{
+    padding: 10px 0px 0px 0px;
+    width: 600px;
+    height: auto;
+}
+
+#coringap{
+    padding: 10px 0px 0px 0px;
+    width: 610px;
+    height: auto;
+}
+
+section#matrix{
+    position: absolute;
+    right: 60%;
+    top: 42%;
+
+   
+    cursor: pointer;
+    transform: translateX(50%);
+    padding: 0px;
+   
+   
+    margin: auto;
     
-    box-shadow: 5px 5px 10px rgba(59, 41, 41, 0.295);
+}
+
+section#coringa{
+    position: absolute;
+    right: 14%;
+    top: 42%;
+    
+    transform: translateX(60%);
+    
+    cursor: pointer;
+    padding: 0px;
+    
     margin: auto;
     
 }
 
 div{
-    padding: 5px;
-    
+    padding: 0px;
     text-align: center;
-}
-
-
-div#title{
     
-    font: normal 20px Arial;
     
 }
+

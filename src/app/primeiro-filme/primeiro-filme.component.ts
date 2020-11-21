@@ -13,37 +13,56 @@ import { FilmeService } from '../filme.service';
 })
 export class PrimeiroFilmeComponent implements OnInit {
   
-  router: Router
+  
   id: number
 
-  filme: Filme
+  filme1: Filme
+
+  filme2: Filme
   
   img_base = 'https://image.tmdb.org/t/p/w200'
   
-  constructor(private filmeService: FilmeService) {
+  constructor(private filmeService: FilmeService, private router1: Router) {
       this.filmeService = filmeService;
    }
 
   ngOnInit(): void {
-    window.document.getElementById('poster').setAttribute('src', 'https://image.tmdb.org/t/p/w200/8h0CG12Oft1GqthLmsctg8iuQQj.jpg')
+    this.filmeService.consultarFilmePorId(475557).subscribe(data=>{
+      this.filme1 = data;
+      
+    }
+    )
+
+    this.filmeService.consultarFilmePorId(603).subscribe(data=>{
+      this.filme2 = data;
+      
+    }
+    )
+    //window.document.getElementById('poster').setAttribute('src', 'https://image.tmdb.org/t/p/w200/8h0CG12Oft1GqthLmsctg8iuQQj.jpg')
   }
 
   consultarFilme() {
     this.filmeService.consultarFilmePorId(this.id).subscribe(data=>{
-      this.filme = data;
-      //window.document.getElementById('poster').setAttribute('src', this.img_base + this.filme.poster_path)
-      //window.document.getElementById('backdrop').setAttribute('src', 'https://image.tmdb.org/t/p/w500' + this.filme.backdrop_path)   
-      //https://image.tmdb.org/t/p/w500/rr7E0NoGKxvbkb89eR1GwfoYjpA.jpg
-
+      this.filme1 = data;
+      
     }
     
-    )  
+    ) 
   }
   
   retornaSrc(poster_path: string){
     if(poster_path != null){
       return 'https://image.tmdb.org/t/p/w200' + poster_path
     }
+  }
+  retornaFundo(poster_path: string){
+    if(poster_path != null){
+      return 'https://image.tmdb.org/t/p/w500' + poster_path
+    }
+  }
+
+  irParaDetalhe(id: number){
+    this.router1.navigate(['/detalhe/', id ])
   }
 
 }

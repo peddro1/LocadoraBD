@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resultados da busca</title>
+    <title>Resultados da busca </title>
 </head>
 <body>
 
@@ -12,14 +12,18 @@
             <img src="/assets/imagens/logoDesafio.png" alt="">
         </div>
         <div id="pesq">
-            <input id="consulta" type="text" name="name" [(ngModel)] = "name">
+            <input id="consulta" type="text" name="name" [(ngModel)] = "name" (keypress)="enter()">
             <button id="botao" (click) = "pesquisarFilme()">Pesquisar</button>
         </div>
 
     </table>
-   
+    
+        <app-primeiro-filme></app-primeiro-filme>
+    
+    
+
     <h1 *ngIf = 'result != null'>
-        Resultados da busca
+        Resultados da busca por: <p>{{name}}</p>
     </h1>
     
     <table id='achados'  >
@@ -31,7 +35,7 @@
                 <img [src]=retornaSrc(resultados.poster_path)  alt="">
             </div>
             <div id="title">
-                <label>{{resultados.original_title}}</label>
+                <label><strong>{{resultados.original_title}}</strong></label>
                 
             </div>
             <div>

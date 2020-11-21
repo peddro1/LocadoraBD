@@ -3,12 +3,16 @@
     
     padding-top: 15px;
     padding-left: 15px;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
+}
+
+#botao{
+    cursor: pointer;
 }
 
 #pesq{
     position: absolute;
-    top: 50px;
+    top: 44px;
     right: 50px;
 
 }
@@ -16,13 +20,15 @@
 body{
     
     background: black;
-    font: normal 15px Arial;
+    font: normal 18px Arial;
     color: white;
 
 }
 
 h1{
-   
+    font-size: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     padding-left: 30px;
 }
 
@@ -59,8 +65,3 @@ div{
     text-align: center;
 }
 
-div#title{
-    
-    font: normal 20px Arial;
-    
-}

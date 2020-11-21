@@ -13,7 +13,7 @@ import { Resultado } from '../resultado.model';
 export class PesquisaFilmeComponent implements OnInit {
 
   name: string
-
+  
   result: Resultado
 
   constructor(private filmeService: FilmeService, private router: Router) { 
@@ -24,14 +24,27 @@ export class PesquisaFilmeComponent implements OnInit {
 
   }
 
+ 
+  
   pesquisarFilme(){
     this.filmeService.consultarFilmePorNome(this.name).subscribe(dado=>{
       this.result = dado
     }
     )
    
+   
   }
 
+
+  enter(){
+    window.document.addEventListener('keypress',(event)=>{
+      const keyName = event.key
+      if(keyName === "Enter"){
+        this.pesquisarFilme()
+      }
+    })
+
+  }
   retornaSrc(poster_path: string){
     if(poster_path != null){
       return 'https://image.tmdb.org/t/p/w200' + poster_path

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { Filme } from '../filme.model';
 import { FilmeService } from '../filme.service';
 
@@ -15,7 +15,8 @@ export class DetalheFilmeComponent implements OnInit {
 
 
   constructor(private filmeService: FilmeService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private route: Router 
     ) {
       this.filmeService = filmeService
       
@@ -39,6 +40,10 @@ export class DetalheFilmeComponent implements OnInit {
       return 'https://image.tmdb.org/t/p/w500' + backdrop_path
     }
     
+  }
+
+  voltarHome(){
+    this.route.navigate([''])
   }
 
 }

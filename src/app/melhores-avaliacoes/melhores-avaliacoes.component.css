@@ -2,12 +2,13 @@
 
 body{
     background: black;
-    font: normal 15px Arial;
+    font: normal 18px Arial;
     color: white;
     
 }
 
 h1{
+    font-size: 30px;
     padding-left: 30px;
 }
 
@@ -44,8 +45,3 @@ div{
     text-align: center;
 }
 
-div#title{
-    
-    font: normal 20px Arial;
-    
-}
