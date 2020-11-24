@@ -12,23 +12,24 @@
             <img src="/assets/imagens/logoDesafio.png" alt="">
         </div>
         <div id="pesq">
-            <input id="consulta" type="text" name="name" [(ngModel)] = "name" (keypress)="enter()">
-            <button id="botao" (click) = "pesquisarFilme()">Pesquisar</button>
+            <input id="consulta" type="text" name="name" [(ngModel)] = "name" (keydown.enter)="pesquisarFilme()" tabindex="0">
+            <button id="botao" (click) = "pesquisarFilme()" tabindex="0">Pesquisar</button>
         </div>
 
     </table>
     
-        <app-primeiro-filme></app-primeiro-filme>
-    
+       
+    <app-primeiro-filme *ngIf = 'result == null'></app-primeiro-filme>
     
 
-    <h1 *ngIf = 'result != null'>
-        Resultados da busca por: <p>{{name}}</p>
+    <h1 *ngIf = 'result != null' tabindex="0">
+        Resultados da busca por: <p tabindex="0">{{name}}</p>
     </h1>
     
     <table id='achados'  >
        
-        <section id = 'search' *ngFor = 'let resultados of result?.results' (click) = 'irParaDetalhe(resultados?.id)' >
+        <section id = 'search' *ngFor = 'let resultados of result?.results' (click) = 'irParaDetalhe(resultados?.id)' 
+        tabindex="0" (keydown.enter)= 'irParaDetalhe(resultados?.id)' >
 
             <div >
                 
@@ -39,7 +40,7 @@
                 
             </div>
             <div>
-                <label>{{resultados.release_date}}</label>
+                <label >{{resultados.release_date}}</label>
             </div>
             
         

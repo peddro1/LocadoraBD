@@ -10,6 +10,9 @@ body{
     position: absolute;
     right: 380px;
     top: 120px;
+    padding: 4px;
+    font-style: normal;
+    color: black;
 }
 
 section{
@@ -30,5 +33,4 @@ div{
     
     text-align: center;
 }
-
 

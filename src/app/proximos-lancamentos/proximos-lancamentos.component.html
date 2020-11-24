@@ -6,10 +6,11 @@
     <title>Próximos Lançamenos</title>
 </head>
 <body >
-    <h1>Próximos Lançamentos</h1>
+    <h1 tabindex="0">Próximos Lançamentos</h1>
 
     <table id="orgProxLancamentos">
-        <section   id= 'ProxLancamentos' *ngFor = 'let resultados of proxLancamentos?.results' (click) = 'irParaDetalhe(resultados?.id)'>
+        <section   id= 'ProxLancamentos' *ngFor = 'let resultados of proxLancamentos?.results'
+         (click) = 'irParaDetalhe(resultados?.id)' tabindex="0" (keydown.enter)= 'irParaDetalhe(resultados?.id)'>
 
             <div >
                 

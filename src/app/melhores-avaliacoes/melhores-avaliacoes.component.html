@@ -6,10 +6,11 @@
     <title>Top Filme</title>
 </head>
 <body >
-    <h1>Melhores avaliações</h1>
+    <h1 tabindex="0">Melhores avaliações</h1>
 
     <table id="orgTops">
-        <section   id= 'tops' *ngFor = 'let resultados of melhoresFilmes?.results' (click) = 'irParaDetalhe(resultados?.id)'>
+        <section   id= 'tops' *ngFor = 'let resultados of melhoresFilmes?.results' 
+        (click) = 'irParaDetalhe(resultados?.id)' tabindex="0" (keydown.enter)="irParaDetalhe(resultados?.id)">
 
             <div >
                 

@@ -18,6 +18,7 @@ export class MaisPopularesComponent implements OnInit {
 
   filmesPopulares: Resultado
   
+  id: number
  
   
   constructor(private filmeService: FilmeService, private router: Router) { 
@@ -44,16 +45,10 @@ export class MaisPopularesComponent implements OnInit {
 
   irParaDetalhe(id: number){
     this.router.navigate(['/detalhe/', id ])
-    
-  }
-
-  contras(){
-    
-    //window.document.getElementById('orgPopular').style.border = '3px solid yellow'
-    
-
 
   }
 
+ 
+  
 
 }

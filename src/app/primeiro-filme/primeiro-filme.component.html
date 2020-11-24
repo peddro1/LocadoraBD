@@ -14,7 +14,7 @@
         </div>
         
         <section id= "matrix">
-            <div  (click)="irParaDetalhe(603)">
+            <div  (click)="irParaDetalhe(603)" tabindex="0" (keydown.enter) = 'irParaDetalhe(603)'>
                 <img id="poster"  [src]=retornaSrc(filme2?.poster_path)  alt="" >
             </div>
             
@@ -29,7 +29,7 @@
        
 
         <section id="coringa">
-            <div (click)="irParaDetalhe(475557)">
+            <div (click)="irParaDetalhe(475557)" tabindex="0" (keydown.enter)= 'irParaDetalhe(475557)'>
                 <img id="poster"  [src]=retornaSrc(filme1?.poster_path)  alt="" >
             </div>
            

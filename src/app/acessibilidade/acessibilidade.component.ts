@@ -20,6 +20,8 @@ export class AcessibilidadeComponent implements OnInit {
 
   autoContraste(){
     this.filmeService.setContraste(this.cont++)
+    
+   
   }
 
   aumentoDeFonte(){
@@ -33,5 +35,8 @@ export class AcessibilidadeComponent implements OnInit {
   diminuicaoDeFonte(){
     this.filmeService.setFonteMenor(this.fonte -= 3)
   }
+
+ 
+ 
 
 }

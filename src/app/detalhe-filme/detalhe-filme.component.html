@@ -1,5 +1,6 @@
 <app-acessibilidade></app-acessibilidade>
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,10 +11,12 @@
 <body>
 
     
-    <section id="detalhe" *ngIf = 'filme != null'>
+    <section id="detalhe" *ngIf = 'filme != null' >
 
         <div >
-            <button id='voltar' (click) = "voltarHome()"><strong> X </strong></button>
+            <button id='voltar' (click) = "voltarHome()" tabindex="0" 
+            (keydown.enter) = "voltarHome()"> <strong > X </strong></button>
+            
         </div>
 
         <div>
@@ -21,13 +24,13 @@
         </div>
          
         <div>
-            <label><strong>{{filme?.original_title}}</strong></label>
+            <label tabindex="0"><strong>{{filme?.original_title}}</strong></label>
         </div>
         <div>
-            <label id="genero"> {{filme?.genres[0]?.name}}</label>
+            <label tabindex="0" id="genero"> {{filme?.genres[0]?.name}}</label>
         </div>
         <div>
-            <label>{{filme?.overview}}</label>
+            <label tabindex="0">{{filme?.overview}}</label>
         </div>
     
     </section>

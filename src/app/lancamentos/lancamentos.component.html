@@ -6,10 +6,11 @@
     <title>Lançamentos</title>
 </head>
 <body >
-    <h1>Lançamentos</h1>
+    <h1 tabindex="0">Lançamentos</h1>
 
     <table id="orgLancamentos">
-        <section   id= 'lancamentos' *ngFor = 'let resultados of lancamentos?.results' (click) = "irParaDetalhe(resultados?.id)">
+        <section  id= 'lancamentos' *ngFor = 'let resultados of lancamentos?.results' 
+        (click) = "irParaDetalhe(resultados?.id)" tabindex="0" (keydown.enter)='irParaDetalhe(resultados?.id)'>
 
             <div >
                 
@@ -20,7 +21,7 @@
                 
             </div>
             <div>
-                <label>{{resultados.release_date}}</label>
+                <label >{{resultados.release_date}}</label>
             </div>
             
         

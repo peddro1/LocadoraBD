@@ -6,17 +6,18 @@
     <title>Populares</title>
 </head>
 <body >
-    <h1>Filmes Populares</h1>
+    <h1 tabindex="0">Filmes Populares</h1>
 
     <table id="orgPopular">
-        <section id= 'populares' *ngFor = 'let resultados of filmesPopulares?.results' (click)="irParaDetalhe(resultados?.id)" >
+        <section id= 'populares' *ngFor = 'let resultados of filmesPopulares?.results'
+         (click)="irParaDetalhe(resultados?.id)" tabindex="0" (keydown.enter) = 'irParaDetalhe(resultados?.id)'>
 
             <div >
                 
                 <img [src]= retornaSrc(resultados.poster_path)  alt="">
             </div>
             <div id="title">
-                <label> <strong>{{resultados.original_title}}</strong></label>
+                <label > <strong>{{resultados.original_title}}</strong></label>
                 
             </div>
             <div>

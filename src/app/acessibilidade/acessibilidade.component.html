@@ -7,16 +7,20 @@
 </head>
 <body id="icon">
     <div>
-        <img src="/assets/imagens/contraste.png" alt="" (click) = 'autoContraste()'>
+        <img name='auto-contraste' src="/assets/imagens/contraste.png" alt="" (click) = 'autoContraste()' 
+        tabindex='0' (keydown.enter) = 'autoContraste()'>
     </div>
     <div>
-        <img src="/assets/imagens/A+.png" alt="" (click) = "aumentoDeFonte()">
+        <img src="/assets/imagens/A+.png" alt="" (click) = "aumentoDeFonte()" 
+        tabindex='0' (keydown.enter) = 'aumentoDeFonte()'>
     </div>
     <div>
-        <img src="/assets/imagens/A.png" alt="" (click) = "restaurarFonte()">
+        <img src="/assets/imagens/A.png" alt="" (click) = "restaurarFonte()" 
+        tabindex='0' (keydown.enter) = 'restaurarFonte()'>
     </div>
     <div>
-        <img src="/assets/imagens/A-.png" alt="" (click) = "diminuicaoDeFonte()">
+        <img src="/assets/imagens/A-.png" alt="" (click) = "diminuicaoDeFonte()" 
+        tabindex='0' (keydown.enter) = 'diminuicaoDeFonte()'>
     </div>
 </body>
 </html>

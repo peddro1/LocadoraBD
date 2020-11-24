@@ -16,7 +16,7 @@ export class DetalheFilmeComponent implements OnInit {
 
   constructor(private filmeService: FilmeService,
     private activatedRoute: ActivatedRoute,
-    private route: Router 
+    private router: Router
     ) {
       this.filmeService = filmeService
       
@@ -43,7 +43,9 @@ export class DetalheFilmeComponent implements OnInit {
   }
 
   voltarHome(){
-    this.route.navigate([''])
+    
+    this.router.navigate([''])
   }
+
 
 }
