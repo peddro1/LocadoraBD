@@ -51,11 +51,11 @@ export class HomeComponent implements OnInit {
             window.document.getElementsByTagName('section')[i].style.border = ''
             window.document.getElementsByTagName('section')[i].style.background = 'rgb(4, 107, 110)'
           }
-          if(window.document.getElementById('botao')){                   //fundo branco botao de pesquisa
-            window.document.getElementById('botao').style.background = 'white'
+          if(window.document.getElementById('botao')){                   //fundo original botao de pesquisa
+            window.document.getElementById('botao').style.background = ''
              
-          }else if(window.document.getElementById('voltar')){                  // fundo branco botao de voltar
-            window.document.getElementById('voltar').style.background = 'white'
+          }else if(window.document.getElementById('voltar')){                  // fundo original botao de voltar
+            window.document.getElementById('voltar').style.background = ''
           }
 
           if(window.document.getElementById("detalhe")){                  // sem borda na tela de detalhe

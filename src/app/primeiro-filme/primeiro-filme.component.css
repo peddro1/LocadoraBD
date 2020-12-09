@@ -15,7 +15,7 @@ table{
 
 #matrixp{
     padding: 10px 0px 0px 0px;
-    width: 600px;
+    width: 610px;
     height: auto;
 }
 
@@ -28,7 +28,7 @@ table{
 section#matrix{
     position: absolute;
     right: 60%;
-    top: 42%;
+    top: 35%;
 
    
     cursor: pointer;
@@ -43,7 +43,7 @@ section#matrix{
 section#coringa{
     position: absolute;
     right: 14%;
-    top: 42%;
+    top: 35%;
     
     transform: translateX(60%);
     
