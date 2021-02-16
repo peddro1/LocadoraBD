@@ -8,8 +8,8 @@ body{
 #voltar{
     cursor: pointer;
     position: absolute;
-    right: 380px;
-    top: 120px;
+    right: 28%;
+    top: 20%;
     padding: 4px;
     font-style: normal;
     color: black;
