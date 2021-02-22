@@ -9,31 +9,121 @@
 </head>
 <body>
 
-    
-    <section id="detalhe" *ngIf = 'filme != null' >
+    <section id="detalheEaluguel">
 
-        <div >
-            <button id='voltar' (click) = "voltarHome()" tabindex="0" 
-            (keydown.enter) = "voltarHome()"> <strong > X </strong></button>
-            
-        </div>
+        <section id="detalhe" *ngIf = 'filme != null' >
 
-        <div>
-            <img id = 'backdrop' [src]="retornaSrc(filme?.backdrop_path)" alt="">
-        </div>
-         
-        <div>
-            <label tabindex="0"><strong>{{filme?.original_title}}</strong></label>
-        </div>
-        <div>
-            <label tabindex="0" id="genero"> {{filme?.genres[0]?.name}}</label>
-        </div>
-        <div>
-            <label tabindex="0">{{filme?.overview}}</label>
-        </div>
+            <div >
+                <button id='voltar' (click) = "voltarHome()" tabindex="0" 
+                (keydown.enter) = "voltarHome()"> <strong > X </strong></button>
+                
+            </div>
     
+            <div>
+                <img id = 'backdrop' [src]="retornaSrc(filme?.backdrop_path)" alt="">
+            </div>
+             
+            <div>
+                <label tabindex="0"><strong>{{filme?.original_title}}</strong></label>
+            </div>
+            <div>
+                <label tabindex="0" id="genero"> {{filme?.genres[0]?.name}}</label>
+            </div>
+            <div>
+                <label tabindex="0">{{filme?.overview}}</label>
+            </div>
+            <div>
+                <label tabindex="0">Média dos votos: {{filme?.vote_average}}</label>
+            </div>
+            <div>
+                <label tabindex="0">Orçamento: US$ {{filme?.budget}}</label>
+            </div>
+        
+        </section>
+        
+        <section id="aluguel">
+            <div>
+                <img id = 'poster' [src]="retornaPoster(filme?.poster_path)" alt="">
+            </div>
+             
+            <div>
+                <div>
+                    <label><strong>Alugar:</strong></label>
+                </div>
+
+                <div>
+                    <label>Valor: R$ {{filme?.vote_average*2}}</label>
+                </div>
+                
+                <div>
+                    <label >Nome do cliente</label>
+    
+                </div>
+               
+                
+                
+                <div>
+                    
+                    <input type="text">
+                </div>
+    
+                <div>
+                    <button id="confAluguel" (click) = "alugarFilme()" >Confirmar Aluguel</button>
+                </div>
+                
+    
+            </div>
+    
+        </section>
     </section>
     
+
+    <section id="consultas">
+        <div>
+            <h3>Consultas:</h3>
+        </div>
+
+
+        <section id="orgconsultas">
+            <div>
+            
+                <div>
+                    <label for="">Por cliente</label>
+                </div>        
+                
+                <div>
+                    <input type="text">
+                </div>
+    
+                <div>
+                    <button id="consultaPorCliente">Consultar</button>
+                </div>
+                
+    
+            </div>
+
+            <div>
+            
+                <div>
+                    <label >Por filme</label>
+                </div>
+                
+                <div>
+                    
+                    <input type="text">
+                </div>
+    
+                <div>
+                    <button id="consultaPorCliente">Consultar</button>
+                </div>
+                
+    
+            </div>
+
+        </section>
+        
+    </section>
+
 </body>
 </html>
 

@@ -27,7 +27,7 @@ export class PrimeiroFilmeComponent implements OnInit {
    }
 
   ngOnInit(): void {
-    this.filmeService.consultarFilmePorId(475557).subscribe(data=>{
+    this.filmeService.consultarFilmePorId(464052).subscribe(data=>{
       this.filme1 = data;
       
     }

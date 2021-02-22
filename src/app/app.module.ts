@@ -41,4 +41,6 @@ import { AcessibilidadeComponent } from './acessibilidade/acessibilidade.compone
   providers: [FilmeService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+  
+}

@@ -41,7 +41,7 @@ export class FilmeService{
     }
 
     retornaProxLancamentos(){
-        return this.httpClient.get<Resultado>('https://api.themoviedb.org/3/movie/upcoming?api_key=371ce6e369192bb9b814d0cb4741a793&region=US')
+        return this.httpClient.get<Resultado>('https://api.themoviedb.org/3/movie/upcoming?api_key=371ce6e369192bb9b814d0cb4741a793')
     }
 
     setContraste(valor){

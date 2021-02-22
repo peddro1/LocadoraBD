@@ -1,7 +1,14 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+
+
+
 import { Filme } from '../filme.model';
 import { FilmeService } from '../filme.service';
+
+
+
 
 @Component({
   selector: 'app-detalhe-filme',
@@ -11,7 +18,14 @@ import { FilmeService } from '../filme.service';
 export class DetalheFilmeComponent implements OnInit {
   //id: Number
 
+
+  
+  
+  
+  
   filme: Filme
+
+  nomeCliente: String
 
 
   constructor(private filmeService: FilmeService,
@@ -42,6 +56,21 @@ export class DetalheFilmeComponent implements OnInit {
     
   }
 
+  retornaPoster(poster_path: string){
+    if(poster_path != null){
+      return 'https://image.tmdb.org/t/p/w200' + poster_path
+    }
+  }
+
+  alugarFilme(){
+    //const db = require('src/conector')
+    //const clientes = db.retornaCliente()
+  
+
+  }
+  
+
+
   voltarHome(){
     
     this.router.navigate([''])
@@ -49,3 +78,5 @@ export class DetalheFilmeComponent implements OnInit {
 
 
 }
+
+

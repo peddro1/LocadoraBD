@@ -10,4 +10,6 @@ export class Filme{
     poster_path: string   //caminho para imagem do poster
     overview: string   //resumo do filme
     genres: Genero    //genero do filme
+    vote_average: number //media dos votos
+    budget: number  //orçamento
 }

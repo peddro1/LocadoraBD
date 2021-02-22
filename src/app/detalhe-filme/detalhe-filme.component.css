@@ -3,19 +3,29 @@ body{
     color: white;
     padding-top: 100px;
     
+    display: grid;
+    grid-row: 1fr 1fr;
+    grid-column: 1/3;
+    
+}
+
+#detalheEaluguel{
+    display: grid;
+    grid-template-columns: 3fr 2fr;
+    grid-row: 1/3;
 }
 
 #voltar{
     cursor: pointer;
     position: absolute;
-    right: 28%;
-    top: 20%;
+    right: 89.5%;
+    top: 22%;
     padding: 4px;
     font-style: normal;
     color: black;
 }
 
-section{
+#detalhe{
     
     background-color: rgb(4, 107, 110);
     border-radius: 10px;
@@ -27,10 +37,52 @@ section{
     
 }
 
+#aluguel{
+    
+    padding-top: 15px;
+    padding-bottom: 10px;
+    background-color: rgb(4, 107, 110);
+   
+    border-radius: 10px;
+    width: 300px;
+    
+    margin: auto;
+
+    display: grid;
+    
+   
+
+}
+
+#consultas{
+    
+    margin-top: 60px;
+    margin-left: 12%;
+   
+    width: 1000px;
+    border-radius: 10px;
+    background-color: rgb(4, 107, 110);
+}
+
+#orgconsultas{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    
+}
+
+input{
+    width: 200px;
+
+}
+#confAluguel{
+    padding: auto;
+    
+}
 
 div{
-    padding: 5px;
+    padding: 7px;
     
     text-align: center;
 }
+
 
