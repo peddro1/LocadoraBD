@@ -1,13 +1,14 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Cliente } from '../cliente.model';
 
 
 
 
 import { Filme } from '../filme.model';
 import { FilmeService } from '../filme.service';
-
-
+import { FilmesBD } from '../filmesBD.model';
+import { Resultado } from '../resultado.model';
 
 
 @Component({
@@ -15,13 +16,18 @@ import { FilmeService } from '../filme.service';
   templateUrl: './detalhe-filme.component.html',
   styleUrls: ['./detalhe-filme.component.css']
 })
+
+@Input()
 export class DetalheFilmeComponent implements OnInit {
   //id: Number
 
+  quantidadevalor: any
 
-  
-  
-  
+  filmesalugados: any
+
+  clientes: Array<Cliente>
+
+  filmesBD: Array<FilmesBD>
   
   filme: Filme
 
@@ -62,13 +68,34 @@ export class DetalheFilmeComponent implements OnInit {
     }
   }
 
-  alugarFilme(){
-    //const db = require('src/conector')
-    //const clientes = db.retornaCliente()
-  
 
+  verClientes(){
+    this.filmeService.retornaClientes().subscribe(data=>{
+      this.clientes = data
+
+    })
+  
+  }
+
+  verFilmes(){
+    this.filmeService.retornaFilmes().subscribe(data => {
+      this.filmesBD = data
+    })
   }
   
+  filmesAlugados(){
+    this.filmeService.filmesAlugados().subscribe(data =>{
+      this.filmesalugados = data
+    })
+  }
+
+  quantidadeValor(){
+    this.filmeService.quantidadeValor().subscribe(data =>{
+      this.quantidadevalor = data 
+      console.log(this.quantidadevalor)
+    })
+
+  }
 
 
   voltarHome(){

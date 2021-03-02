@@ -1,6 +1,8 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpClientJsonpModule } from '@angular/common/http';
 import { Injectable, EventEmitter } from '@angular/core';
+import { Cliente } from './cliente.model';
 import { Filme } from './filme.model';
+import { FilmesBD } from './filmesBD.model';
 import { Resultado } from './resultado.model';
 
 @Injectable()
@@ -42,6 +44,23 @@ export class FilmeService{
 
     retornaProxLancamentos(){
         return this.httpClient.get<Resultado>('https://api.themoviedb.org/3/movie/upcoming?api_key=371ce6e369192bb9b814d0cb4741a793')
+    }
+
+    retornaClientes(){
+        return this.httpClient.get<Array<Cliente>>('http://localhost:3000/retornaClientes')
+        
+    } 
+
+    retornaFilmes(){
+        return this.httpClient.get<Array<FilmesBD>>('http://localhost:3000/retornaFilmes')
+    }
+
+    filmesAlugados(){
+        return this.httpClient.get<any>("http://localhost:3000/filmesAlugados")
+    }
+
+    quantidadeValor(){
+        return this.httpClient.get<any>("http://localhost:3000/quantidadeValor")
     }
 
     setContraste(valor){

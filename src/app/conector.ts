@@ -1,4 +1,4 @@
-
+/*
 const mysql = require('mysql');
 
 const con = mysql.createConnection({
@@ -26,7 +26,7 @@ function retornaCliente(){
 module.exports = {
     retornaCliente
 }
-/*
+
 con.end((err) => {
     if(err) {
         console.log('Erro to finish connection...', err)
@@ -34,27 +34,28 @@ con.end((err) => {
     }
     console.log('The connection was finish...')
 })
-/*
+*/
 async function connect(){
 
-    if( global.connection && global.connection.state !== "disconnected"){
-        return global.connection
+    if( global){
+        return global
     }
     const mysql = require("mysql2/promise")
     const connection = await mysql.createConnection("mysql://root:123456@localhost:3306/locadora") 
     console.log("conectou mysql")
-    global.connection = connection
+    global = connection
     return connection
 }
 
-export async function selectVendas(){
+async function selectVendas(){
     const con = await connect();
     const [rows] = await con.query("SELECT * FROM clientes;")
     return rows;
 
 }
 
-export async function chama() {
+
+async function chama() {
     const vendas = await selectVendas()
     //vendas.map(Nome)
     for(const i in vendas){
@@ -64,4 +65,8 @@ export async function chama() {
     
 }
 
-*/
+chama()
+
+module.exports = {selectVendas}
+
+

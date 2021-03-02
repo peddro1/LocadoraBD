@@ -9,7 +9,7 @@
 </head>
 <body>
 
-    <section id="detalheEaluguel">
+    <table id="detalheEaluguel">
 
         <section id="detalhe" *ngIf = 'filme != null' >
 
@@ -68,14 +68,14 @@
                 </div>
     
                 <div>
-                    <button id="confAluguel" (click) = "alugarFilme()" >Confirmar Aluguel</button>
+                    <button id="confAluguel"  >Confirmar Aluguel</button>
                 </div>
                 
     
             </div>
     
         </section>
-    </section>
+    </table>
     
 
     <section id="consultas">
@@ -88,36 +88,234 @@
             <div>
             
                 <div>
-                    <label for="">Por cliente</label>
+                    <label for=""><strong>Clientes</strong></label>
                 </div>        
                 
-                <div>
-                    <input type="text">
-                </div>
-    
-                <div>
-                    <button id="consultaPorCliente">Consultar</button>
-                </div>
                 
     
+                <div>
+                    <button id="consultaPorCliente" (click) = "verClientes()" >Consultar</button>
+                </div>
+
+                <div>
+                    <table *ngIf = 'clientes != null'>
+
+                        <tr>
+                            <th>
+                                <label for="">ID</label>
+                            </th>
+                            <th>
+                                <label for="">Nome</label>
+                            </th>    
+
+                        </tr>
+                        
+                        <tr *ngFor = 'let resultados of clientes' >    
+                                
+                                <td>
+                                    <label>{{resultados.idClientes}}</label>
+                                </td>
+
+                                
+                                <td>
+                                    <label><strong>{{resultados.Cliente}}</strong></label>
+                                </td>
+                                                                                
+                        </tr>
+    
+                    </table>
+
+                </div>
+                
+                
+            
             </div>
 
             <div>
             
                 <div>
-                    <label >Por filme</label>
+                    <label ><strong>Filmes</strong></label>
                 </div>
                 
                 <div>
+                    <button id="consultaPorCliente" (click) = "verFilmes()">Consultar</button>
+                </div>
+
+                <div>
+                    <table *ngIf = 'filmesBD != null'>
+
+                        <tr>
+                            <th>
+                                <label for="">Título</label>
+                            </th>
+                            <th>
+                                <label for="">Categoria</label>
+                            </th>  
+                            <th>
+                                <label for="">Classificação indicativa</label>
+                            </th>
+                            <th>
+                                <label for="">Valor</label>
+                            </th>      
+
+                        </tr>
+                        
+                        <tr *ngFor = 'let resultados of filmesBD' >    
+                                
+                                <td>
+                                    <label>{{resultados.nome}}</label>
+                                </td>
+
+                                <td>
+                                    <label>{{resultados.Categoria}}</label>
+                                </td>
+
+                                <td>
+                                    <label>{{resultados.ClassificacaoInd}}</label>
+                                </td>
+
+                                <td>
+                                    <label> R$ {{resultados.Valor}}</label>
+                                </td>
+                                                                                
+                        </tr>
+    
+                    </table>
+
+                </div>
+
+            </div>
+
+
+            <div>
+            
+                <div>
+                    <label for=""><strong>Filmes alugados por cliente</strong></label>
+                </div>        
+                
+                <div>
+                    <button (click) = "filmesAlugados()" >Consultar</button>
+                </div>
+
+                <div>
+                    <table *ngIf = 'filmesalugados != null'>
+
+                        <tr>
+                            <th>
+                                <label for="">Cliente</label>
+                            </th>
+                            <th>
+                                <label for="">Filme</label>
+                            </th>    
+                            <th>
+                                <label for="">Data de Aluguel</label>
+                            </th>
+                            <th>
+                                <label for="">Data de Devolução</label>
+                            </th>    
+
+                        </tr>
+                        
+                        <tr *ngFor = 'let resultados of filmesalugados' >    
+                                
+                                <td>
+                                    <label>{{resultados.Cliente}}</label>
+                                </td>
+                                
+                                <td>
+                                    <label><strong>{{resultados.nome}}</strong></label>
+                                </td>
+                                        
+                                <td>
+                                    <label >
+                                        {{
+                                            resultados.DataAluguel[0] + 
+                                            resultados.DataAluguel[1] + 
+                                            resultados.DataAluguel[2] + 
+                                            resultados.DataAluguel[3] +
+                                            resultados.DataAluguel[4] + 
+                                            resultados.DataAluguel[5] + 
+                                            resultados.DataAluguel[6] + 
+                                            resultados.DataAluguel[7] +
+                                            resultados.DataAluguel[8] + 
+                                            resultados.DataAluguel[9]
+                                        }}
+                                    </label>
+                                </td>
+                                
+                                <td>
+                                    <label><strong>
+                                        {{
+                                            resultados.DataDevolucao[0] +
+                                            resultados.DataDevolucao[1] +
+                                            resultados.DataDevolucao[2] +
+                                            resultados.DataDevolucao[3] +
+                                            resultados.DataDevolucao[4] +
+                                            resultados.DataDevolucao[5] +
+                                            resultados.DataDevolucao[6] +
+                                            resultados.DataDevolucao[7] +
+                                            resultados.DataDevolucao[8] +
+                                            resultados.DataDevolucao[9] 
+                                        }}
+                                    </strong></label>
+                                </td>
+                        </tr>
+    
+                    </table>
+
+                </div>
+            </div>
+
+            <div>
+                <div>
+            
+                    <div>
+                        <label ><strong>Quantidade e Valor Total</strong></label>
+                    </div>
                     
-                    <input type="text">
-                </div>
+                    <div>
+                        <button id="consultaPorCliente" (click) = "quantidadeValor()">Consultar</button>
+                    </div>
+                    
+                    <div>
+                        <table *ngIf = 'quantidadevalor != null'>
     
-                <div>
-                    <button id="consultaPorCliente">Consultar</button>
+                            <tr>
+                                <th>
+                                    <label for="">Cliente</label>
+                                </th>
+                                <th>
+                                    <label for="">Quantidade</label>
+                                </th>  
+                             
+                                <th>
+                                    <label for="">Total</label>
+                                </th>      
+    
+                            </tr>
+                            
+                            <tr *ngFor = 'let resultados of quantidadevalor' >    
+                                    
+                                    <td>
+                                        <label>{{resultados.Cliente}}</label>
+                                    </td>
+    
+                                    <td>
+                                        <label>{{resultados.quantidade}}</label>
+                                    </td>
+    
+                                    <td>
+                                        <label>R$ {{resultados.soma}}</label>
+                                    </td>
+                                        
+                            </tr>
+        
+                        </table>
+    
+                    </div>
+    
                 </div>
                 
-    
             </div>
 
         </section>

@@ -32,8 +32,7 @@ export class PesquisaFilmeComponent implements OnInit {
 
     this.filmeService.consultarFilmePorNome(this.name).subscribe(dado=>{
       this.result = dado
-    }
-    )
+    })
    
   }
 
